@@ -16,7 +16,7 @@ export default function Home() {
           <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg" />
           <Profile>
             <Name> Juliana Bernal</Name>
-            <UserImage src="https://scontent.fbog3-1.fna.fbcdn.net/v/t1.18169-9/26731778_181258765799680_1910970749898320917_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=174925&_nc_eui2=AeHIbD6t7ml_XU3kfdoWVqzzWTlRukpDLwZZOVG6SkMvBofZe4Tb-y8fm8gALxPzXokA6ZnfJ34nHLIUKKnyx5sm&_nc_ohc=waThBjdZmtIAX8-hOty&_nc_ht=scontent.fbog3-1.fna&oh=e4ff34e51566954cb05438c83a78fdbf&oe=61AA5818" />
+            <UserImage src="/assets/uberprofile.png" />
           </Profile>
         </Header>
 

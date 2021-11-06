@@ -1,8 +1,14 @@
-import React from "react";
+import { useState } from "react";
 import tw from "tailwind-styled-components";
 import Link from "next/link";
 
 const Search = () => {
+  const [pickup, setPickup] = useState("");
+  const [dropoff, setDropoff] = useState("");
+
+  console.log(pickup);
+  console.log(dropoff);
+
   return (
     <Wrapper>
       {/*Button Container */}
@@ -21,8 +27,16 @@ const Search = () => {
         </FromToIcons>
 
         <InputBoxes>
-          <Input placeholder="Enter pickup location" />
-          <Input placeholder="Where to?" />
+          <Input
+            placeholder="Enter pickup location"
+            value={pickup}
+            onChange={(e) => setPickup(e.target.value)}
+          />
+          <Input
+            placeholder="Where to?"
+            value={dropoff}
+            onChange={(e) => setDropoff(e.target.value)}
+          />
         </InputBoxes>
 
         <PlusIcon src="https://img.icons8.com/ios/50/000000/plus-math.png" />
@@ -35,7 +49,19 @@ const Search = () => {
       </SavedPlaces>
 
       {/* Confirm Location*/}
-      <ConfirmLocation>Confirm Locations</ConfirmLocation>
+      <Link
+        href={{
+          pathname: "/confirm",
+          query: {
+            pickup: pickup,
+            dropoff: dropoff,
+          },
+        }}
+      >
+        <ConfirmLocation>
+          <ConfirmButton>Confirm Locations</ConfirmButton>
+        </ConfirmLocation>
+      </Link>
     </Wrapper>
   );
 };
@@ -95,5 +121,9 @@ bg-gray-400 w-10 h-10 p-2 rounded-full mr-2
 `;
 
 const ConfirmLocation = tw.div`
-h-8 bg-black m-3 text-white font-semibold text-center flex items-center justify-center
+
+`;
+
+const ConfirmButton = tw.div`
+ bg-black text-white text-center rounded-md cursor-pointer mt-2 mx-4 px-4 py-3 text-2xl
 `;
